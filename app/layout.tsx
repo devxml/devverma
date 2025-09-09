@@ -13,7 +13,7 @@ const OvO = Ovo({
   weight: "400",
 });
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { 
   title: "Dev Verma",
   description: "Portfolio",
   icons: {
