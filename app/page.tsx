@@ -7,7 +7,7 @@ import Contactform from "./components/Contactform";
 import Skills from "./components/Skills";
 import Education from "./components/Education";  
 import Projects from "./components/Projects";
-import Footer from "./components/Footer"; 
+import Footer from "./components/Footer";  
 import Experience from "./components/Experience";
 import Contextfirst from "./Theme";
 
