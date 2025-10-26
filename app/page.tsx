@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 import Experience from "./components/Experience";
 import Contextfirst from "./Theme";
 
-const Page = () => {
+const Page = () => { 
   const [mode, Setmode] = useState<string>("dark");
   const [image,setImage]=useState<boolean>(false); 
 
