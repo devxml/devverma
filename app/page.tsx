@@ -14,7 +14,7 @@ import Contextfirst from "./Theme";
 const Page = () => { 
   const [mode, Setmode] = useState<string>("dark");
   const [image,setImage]=useState<boolean>(false); 
-
+ 
   useEffect(() => {
     if (mode === "dark") {
       document.documentElement.classList.add("dark");
