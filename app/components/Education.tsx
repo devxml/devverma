@@ -11,8 +11,8 @@ const Education = () => {
       duration: "2022-2026",
       institution: "Sanskriti University", 
       description: "Bachelor of Technology in Computer Science Engineering ",
-      additional: "",
-    },
+      additional: "", 
+    }, 
     {
       img: madanmohan,
       alt: "Madan-mohan-Kalavati",
