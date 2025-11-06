@@ -7,7 +7,7 @@ const Education = () => {
   const educationDetails = [
     {
       img: sanskriti,
-      alt: "Sanskriti-University",
+      alt: "Sanskriti-University", 
       duration: "2022-2026",
       institution: "Sanskriti University", 
       description: "Bachelor of Technology in Computer Science Engineering ",
