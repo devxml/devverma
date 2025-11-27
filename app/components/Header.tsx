@@ -3,7 +3,7 @@ import { MdArrowOutward } from "react-icons/md";
 import Image1 from "../../assets/dp.jpg";
 import { HiDownload } from "react-icons/hi";
 import Image2 from "../../assets/dp.jpg";
-import { useContext, useState } from "react";
+import { useContext, useState } from "react"; 
 import Contextfirst from "../Theme";
 
 const Header = () => {
