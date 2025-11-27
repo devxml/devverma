@@ -10,7 +10,7 @@ const Header = () => {
   const { image, setImage } = useContext(Contextfirst)!;
   const [hovered, setHovered] =useState<boolean>(false);
 
-  return (
+  return ( 
     <div>
       <div
         id="home"
