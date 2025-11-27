@@ -7,7 +7,7 @@ import { useContext, useState } from "react";
 import Contextfirst from "../Theme";
 
 const Header = () => {
-  const { image, setImage } = useContext(Contextfirst)!;
+  const { image, setImage } = useContext(Contextfirst)!; 
   const [hovered, setHovered] =useState<boolean>(false);
 
   return ( 
