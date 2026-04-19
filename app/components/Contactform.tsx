@@ -19,7 +19,7 @@ const icons: Icon[] = [
   {
     icon: FaLinkedin,
     link: "https://www.linkedin.com/in/devxml",
-  },
+  }, 
   {
     icon: FaXTwitter,
     link: "https://x.com/devcodebyte",

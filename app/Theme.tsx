@@ -8,5 +8,5 @@ const Contextfirst = createContext<{
   Setmode: React.Dispatch<React.SetStateAction<string>>;
 } | null>(null);
  
-export default Contextfirst; 
+export default Contextfirst;  
    

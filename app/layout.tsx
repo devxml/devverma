@@ -7,7 +7,7 @@ const OutFit = Outfit({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500"],
 }); 
-
+ 
 const OvO = Ovo({ 
   subsets: ["latin"],
   weight: "400",
