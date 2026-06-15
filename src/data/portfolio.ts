@@ -240,6 +240,8 @@ export const experience = [
       "Led AI/ML initiatives",
       "Conducted workshops on LLMs, RAG Systems, Vector Databases, and Modern AI Applications",
     ],
+    workshopTopics: [
+      ]
   },
   {
     id: "codesoft-intern",
