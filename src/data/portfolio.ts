@@ -231,6 +231,20 @@ export const certifications = [
 
 export const experience = [
   {
+    id: "trackon-intern",
+    role: "Software Development Intern",
+    company: "Trackon Couriers Bharatpur",
+    type: null,
+    period: "Feb 2026 – May 2026",
+    highlights: [
+      "Developed an internal dashboard using  React, Node.js,  Express.js,  and  MongoDB  to manage shipment details  and delivery status updates.",
+      "Built  REST APIs  for adding, updating, and searching  shipment records and customer information.",
+      "Designed a MongoDB database to store and manage  500+  shipment records  , enabling faster search and filtering.",
+      "  Reduced average shipment lookup time from  3–5 minutes  to under 1 minute  by replacing manual spreadsheet-based tracking.",
+    ],
+    workshopTopics: null,
+  },
+  {
     id: "ai-ml-lead",
     role: "AI/ML Lead",
     company: "Technical Club, Sanskriti University",
