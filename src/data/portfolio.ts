@@ -34,11 +34,6 @@ export const socialLinks = [
     icon: "twitter" as const,
   },
   {
-    label: "LeetCode",
-    href: "https://leetcode.com/u/devxml/",
-    icon: "leetcode" as const,
-  },
-  {
     label: "Email",
     href: "mailto:devverma2031@gmail.com",
     icon: "mail" as const,

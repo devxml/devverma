@@ -15,7 +15,7 @@ export function Experience() {
       <div className="space-y-8">
         {experience.map((item) => (
           <div key={item.id} className="space-y-3">
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+            <div className="flex flex-row items-start justify-between gap-2">
               <div className="flex items-start gap-3">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-surface text-[11px] font-bold text-muted">
                   {item.company

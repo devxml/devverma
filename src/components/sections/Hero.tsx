@@ -24,14 +24,12 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="hidden shrink-0 sm:block">
+        <div className="shrink-0">
           <ProfileImage />
         </div>
       </div>
 
-      <div className="mt-8 flex justify-center sm:hidden">
-        <ProfileImage />
-      </div>
+      
     </section>
   );
 }

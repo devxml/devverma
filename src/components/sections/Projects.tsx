@@ -18,7 +18,7 @@ export function Projects() {
         centered
       />
 
-      <div className="grid gap-10 md:grid-cols-2 md:gap-x-8 md:gap-y-12">
+      <div className="grid grid-cols-2 gap-10 gap-x-8 gap-y-12">
         {projects.map((project, index) => (
           <article key={project.id} className="flex flex-col">
             <ProjectImage
