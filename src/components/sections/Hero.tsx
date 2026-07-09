@@ -11,14 +11,14 @@ export function Hero() {
         <div className="min-w-0 flex-1">
           <h1
             id="hero-heading"
-            className="text-[2rem] font-bold leading-tight tracking-tight text-foreground sm:text-4xl"
+            className="text-[2.7rem] font-bold leading-tight tracking-tight text-foreground sm:text-[3.25rem]"
           >
             Hi, I&apos;m Dev{" "}
             <span role="img" aria-label="wave">
               👋
             </span>
           </h1>
-          <p className="mt-3 text-[15px] leading-7 text-muted">
+          <p className="mt-1.5 text-lg font-bold leading-6 text-muted">
             Software Engineer on a quest to build cool stuff and chase dopamine
             hits with every commit . . . .
           </p>

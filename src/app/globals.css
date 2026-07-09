@@ -61,10 +61,10 @@ body {
 }
 
 .section-block {
-  padding-top: 3rem;
+  padding-top: 2rem;
 }
 
-.section-block:first-child {
+#hero.section-block {
   padding-top: 5rem;
 }
 
@@ -73,7 +73,7 @@ body {
 }
 
 @media (min-width: 768px) {
-  .section-block:first-child {
+  #hero.section-block {
     padding-top: 6rem;
   }
 }

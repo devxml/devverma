@@ -7,7 +7,7 @@ export function About() {
         <span id="about-heading">About</span>
       </SimpleSectionTitle>
 
-      <p className="text-[15px] leading-7 text-muted">
+      <p className="text-lg leading-6 text-muted">
         I&apos;m a Software Engineer with a solid foundation and enough
         hands-on experience to have broken (and fixed) things across the entire
         stack. Powered by caffeine, curiosity, and the occasional Stack Overflow

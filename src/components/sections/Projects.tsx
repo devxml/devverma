@@ -18,7 +18,7 @@ export function Projects() {
         centered
       />
 
-      <div className="grid grid-cols-2 gap-10 gap-x-8 gap-y-12">
+      <div className="grid grid-cols-2 gap-8 gap-x-6 gap-y-9">
         {projects.map((project, index) => (
           <article key={project.id} className="flex flex-col">
             <ProjectImage
@@ -27,23 +27,23 @@ export function Projects() {
               priority={index === 0}
             />
 
-            <div className="mt-4 flex flex-1 flex-col">
+            <div className="mt-3 flex flex-1 flex-col">
               <h3
                 id={index === 0 ? "projects-heading" : undefined}
-                className="text-base font-bold tracking-tight text-foreground"
+                className="text-lg font-bold tracking-tight text-foreground"
               >
                 {project.name}
               </h3>
 
-              <p className="mt-2 text-[14px] leading-6 text-muted">
+              <p className="mt-1.5 text-base leading-6 text-muted">
                 {project.description}
               </p>
 
-              <ul className="mt-3 space-y-1.5">
+              <ul className="mt-2 space-y-1">
                 {project.features.map((feature) => (
                   <li
                     key={feature}
-                    className="flex items-start gap-2 text-[14px] leading-6 text-muted"
+                    className="flex items-start gap-2 text-base leading-6 text-muted"
                   >
                     <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-foreground/30" />
                     {feature}
@@ -51,7 +51,7 @@ export function Projects() {
                 ))}
               </ul>
 
-              <div className="mt-4 flex flex-wrap gap-1.5">
+              <div className="mt-3 flex flex-wrap gap-1.5">
                 {project.tech.map((tech) => (
                   <span
                     key={tech}
@@ -62,7 +62,7 @@ export function Projects() {
                 ))}
               </div>
 
-              <div className="mt-4">
+              <div className="mt-3">
                 <a
                   href={project.github}
                   target="_blank"

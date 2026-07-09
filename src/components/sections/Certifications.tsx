@@ -19,7 +19,7 @@ export function Certifications() {
         {certifications.map((cert, index) => (
           <div
             key={cert.id}
-            className="relative flex gap-4 pb-8 last:pb-0 sm:gap-5"
+            className="relative flex gap-4 pb-6 last:pb-0 sm:gap-5"
           >
             {index < certifications.length - 1 && (
               <span
@@ -32,15 +32,15 @@ export function Certifications() {
               <Award className="h-4 w-4" aria-hidden />
             </div>
 
-            <div className="min-w-0 flex-1 border-b border-border pb-8 last:border-b-0 last:pb-0">
+            <div className="min-w-0 flex-1 border-b border-border pb-6 last:border-b-0 last:pb-0">
               <h3
                 id={index === 0 ? "certifications-heading" : undefined}
-                className="text-base font-bold text-foreground"
+                className="text-lg font-bold text-foreground"
               >
                 {cert.title}
               </h3>
-              <p className="mt-0.5 text-sm text-muted">{cert.issuer}</p>
-              <p className="mt-2 text-[14px] leading-6 text-muted">
+              <p className="mt-0.5 text-base text-muted">{cert.issuer}</p>
+              <p className="mt-1.5 text-base leading-6 text-muted">
                 {cert.description}
               </p>
             </div>
