@@ -1,0 +1,102 @@
+import React, { useContext, useState } from "react";
+import { ChevronDown } from "lucide-react";
+import sanskriti from "../../assets/sanskritiuniversity.png";
+import Image from "next/image";
+import Contextfirst from "../Theme";
+import trackon from "../../assets/trackon.png"
+
+const Experience = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const { setImage } = useContext(Contextfirst)!;
+
+  const toggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const educationDetails = [
+    {
+      img: trackon,
+      alt: "Trackon-Couriers",
+      duration: "Feb 2026 - May 2026",
+      institution: "Trackon Couriers",
+      description: "Software Development Intern",
+      
+      additional: [
+        "Designed a role-based shipment tracking dashboard using React, Node.js, Express.js and MongoDB, replacing manual spreadsheet tracking for 500+ records.",
+        "Developed secure REST APIs for shipment management with JWT authentication, pagination, and validation.",
+        "Optimized MongoDB schema and indexing, reducing shipment lookup time from 5 min to 20 sec — 93% improvement",
+        "Reduced manual data-entry errors through server-side validation and structured logging by ∼70%, improving data accuracy"
+      ]
+    },
+    {
+      img: sanskriti,
+      alt: "sanskriti",
+      duration: "Dec 2024 - Jan 2026",
+      institution: "Technical Club, Sanskriti University",
+      description: "AI/ML Lead | Volunteer",
+      additional: [
+        "Led AI/ML initiatives, mentoring 20+ students in Python, ML algorithms, and data visualization.",
+        "Conducted workshops on LLMs, RAG Systems, Vector Databases, and Modern AI Applications, enhancing technical knowledge and practical skills.",
+      ],
+    },
+  ];
+
+  return (
+    <div id="experience" className="mb-6">
+      <h1 className="text-[22px] py-3">Experience</h1>
+      <div className="flex flex-col gap-6">
+        {educationDetails.map((edu, index) => (
+          <div
+            key={index}
+            className="rounded-2xl border border-gray-300 dark:border-gray-700 shadow-sm"
+          >
+            <button
+              onClick={() => {
+                setImage((prev) => !prev);
+                toggle(index);
+              }}
+              className="w-full flex items-center justify-between px-4 py-3 text-left font-medium text-gray-900 dark:text-gray-100"
+            >
+              <div className="flex items-center gap-3">
+                <a href={edu.link} target="_blank">
+                  <Image
+                    alt="company"
+                    src={edu.img}
+                    className="h-9 w-9 object-cover"
+                  />
+                </a>
+              <div>
+  <div className="font-semibold">{edu.institution}</div>
+  <div className="font-normal">{edu.description}</div>
+  <div className="text-sm text-gray-500 dark:text-gray-400">
+    {edu.duration}
+  </div>
+</div>
+              </div>
+              <ChevronDown
+                className={`h-5 w-5 transform transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
+                  }`}
+              />
+            </button>
+
+            {/* Animated content */}
+            <div
+              className={`px-4 text-md pl-[60px] transition-all duration-300 overflow-hidden font-extralight ${openIndex === index ? " pb-2" : "max-h-0"
+                }`}
+            >
+              {edu.additional.map((e, i) => (
+                <div key={i} className="flex gap-2 items-center justify-start">
+                  <p className="self-start">-</p>
+                  <p>{e}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Experience;
