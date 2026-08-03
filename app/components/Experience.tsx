@@ -59,13 +59,11 @@ const Experience = () => {
               className="w-full flex items-center justify-between px-4 py-3 text-left font-medium text-gray-900 dark:text-gray-100"
             >
               <div className="flex items-center gap-3">
-                <a href={edu.link} target="_blank">
-                  <Image
-                    alt="company"
-                    src={edu.img}
-                    className="h-9 w-9 object-cover"
-                  />
-                </a>
+               <Image
+  alt={edu.alt}
+  src={edu.img}
+  className="h-9 w-9 object-cover"
+/>
               <div>
   <div className="font-semibold">{edu.institution}</div>
   <div className="font-normal">{edu.description}</div>
