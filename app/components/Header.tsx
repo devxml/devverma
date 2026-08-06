@@ -53,7 +53,7 @@ const Header = () => {
           </span>
         </a>
         <a
-  href="/resume.pdf"
+  href="https://drive.google.com/file/d/1jV4wyIPsHGbnwTIgFNgYxz2ae0CLje2W/view"
   target="_blank"
   rel="noopener noreferrer"
 >
