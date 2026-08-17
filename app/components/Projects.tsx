@@ -3,7 +3,7 @@ import { FaGithubSquare } from "react-icons/fa";
 import codepilot from "../../assets/codepilot.png";
 import automationbot from "../../assets/automationbot.png";
 import modelforge from "../../assets/modelforge.png";
-import telentra from "../../assets/telentra.png";
+import wellnessai from "../../assets/wellnessai.png";
 import mockmate from "../../assets/mockmate.png";
 import Image, { StaticImageData } from "next/image";
 import Contextfirst from "../Theme";
@@ -67,22 +67,24 @@ const Projects = () => {
         { name: "Cloudinary" },
       ],
     },
-     {
-      name: "Telentra",
-      about:
-        "Resume-ranking and candidate-job matching platform that lets you upload and manage candidate resumes, create job postings, and generate AI-driven matching insights reviewed through a dashboard.",
-      link: "https://github.com/devxml/telentra",
-      image: telentra,
-      tech: [
-        { name: "Next.js" },
-        { name: "TypeScript" },
-        { name: "Tailwind CSS" },
-        { name: "FastAPI" },
-        { name: "LangGraph" },
-        { name: "Gemini" },
-        { name: "MongoDB" },
-      ],
-    },
+    {
+  name: "WellnessAI",
+  about:
+    "AI-powered wellness platform that generates personalised Indian diet, skincare, and haircare plans using LangGraph agents, RAG, and India-specific knowledge bases.",
+  link: "https://github.com/devxml/wellnessai",
+  image: wellnessai,
+  tech: [
+    { name: "Next.js" },
+    { name: "TypeScript" },
+    { name: "Tailwind CSS" },
+    { name: "FastAPI" },
+    { name: "LangGraph" },
+    { name: "LangChain" },
+    { name: "Gemini" },
+    { name: "ChromaDB" },
+    { name: "MongoDB" },
+  ],
+},
     {
       name: "MockMate",
       about:
