@@ -105,7 +105,6 @@ const Projects = () => {
     <section id="projects" className="mt-20">
       <div className="mb-6 flex items-end justify-between gap-4">
         <div>
-          <p className="section-label mb-2">Selected work</p>
           <h2 className="text-3xl font-light tracking-[-0.03em] sm:text-4xl">Projects</h2>
         </div>
         <a target="_blank" href="https://github.com/devxml" className="inline-flex items-center gap-2 text-sm text-gray-500 transition-colors hover:text-black dark:text-gray-400 dark:hover:text-white">
