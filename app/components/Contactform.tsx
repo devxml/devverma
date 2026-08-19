@@ -5,6 +5,7 @@ import { IconType } from "react-icons";
 import { FaGithubSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { MdArrowOutward, MdEmail } from "react-icons/md";
 
 type Icon = {
   icon: IconType;
@@ -75,40 +76,68 @@ const Contactform = () => {
   ];
 
   return (
-    <div id="contact" className="flex flex-col items-center w-full">
-      <h1 className="relative text-xl my-8 mb-[70px]">
-        <div className="absolute -right-[130px] sm:-right-[170px] top-[50px] flex gap-2">
-          {icons.map((e, i) => (
-            <a href={e.link} key={i} target="_blank">
-              <e.icon size={30} />
-            </a>
-          ))}
+    <section id="contact" className="w-full border-t border-gray-200 py-16 dark:border-gray-800">
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <div>
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
+            Contact
+          </p>
+          <h2 className="text-4xl font-light sm:text-5xl">Get in touch.</h2>
+          <p className="mt-5 max-w-sm text-lg font-extralight leading-8 text-gray-600 dark:text-gray-300">
+            Have a project, opportunity, or idea in mind? Send a message and
+            I&apos;ll get back to you soon.
+          </p>
+
+          <a
+            href="mailto:devverma2031@gmail.com"
+            className="mt-8 inline-flex items-center gap-2 text-sm font-medium underline underline-offset-4"
+          >
+            <MdEmail size={19} aria-hidden="true" />
+            devverma2031@gmail.com
+            <MdArrowOutward size={18} aria-hidden="true" />
+          </a>
+
+          <div className="mt-8 flex items-center gap-4">
+            {icons.map((e, i) => (
+              <a
+                href={e.link}
+                key={i}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open ${i === 0 ? "GitHub" : i === 1 ? "LinkedIn" : "X"} profile`}
+                className="transition-opacity hover:opacity-60"
+              >
+                <e.icon size={25} />
+              </a>
+            ))}
+          </div>
         </div>
-        Get In Touch
-      </h1>
+
       <form
         onSubmit={onSubmit}
-        className="mt-4 relative flex flex-col gap-10 w-full max-w-[670px]"
+        className="flex w-full flex-col gap-6 rounded-2xl border border-gray-200 bg-white/70 p-6 shadow-sm sm:p-8 dark:border-gray-700 dark:bg-gray-950/60"
       >
         {getintouch.map((e, i) => (
-          <div className="relative" key={i}>
-            <p className="absolute text-sm mb-3 -top-5 font-normal">
+          <div className="flex flex-col gap-2" key={i}>
+            <label htmlFor={e.name} className="text-sm font-medium">
               {e.title}
-            </p>
+            </label>
 
-            <div className="text-black">
+            <div className="text-black dark:text-white">
               {e.name !== "message" ? (
                 <input
-                  className="border-b-[3px] p-1 rounded-lg border-black w-full text-base"
+                  id={e.name}
+                  className="w-full rounded-lg border border-gray-300 bg-transparent px-3 py-3 text-base transition-colors focus:border-black dark:border-gray-600 dark:focus:border-white"
                   name={e.name}
                   type={e.type}
                   required
                 />
               ) : (
                 <textarea
+                  id={e.name}
                   name={e.name}
-                  className="border-b-[3px] rounded-lg p-1 border-black w-full text-base"
-                  rows={3}
+                  className="w-full resize-y rounded-lg border border-gray-300 bg-transparent px-3 py-3 text-base transition-colors focus:border-black dark:border-gray-600 dark:focus:border-white"
+                  rows={5}
                   required
                 />
               )}
@@ -117,14 +146,20 @@ const Contactform = () => {
         ))}
 
         <button
-          className={`dark:border-white dark:border-[1px] absolute -bottom-[50px] right-0 bg-black text-white p-3`}
+          className="inline-flex w-full items-center justify-center gap-2 bg-black px-4 py-3 text-base text-white transition-opacity hover:opacity-80 dark:border dark:border-white dark:bg-white dark:text-black sm:w-fit sm:self-end"
           type="submit"
         >
-          Submit Form
+          Send message
+          <MdArrowOutward aria-hidden="true" />
         </button>
       </form>
-      <span>{result}</span>
-    </div>
+      </div>
+      {result && (
+        <p className="mt-5 text-center text-sm font-light" role="status">
+          {result}
+        </p>
+      )}
+    </section>
   );
 };
 

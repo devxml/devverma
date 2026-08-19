@@ -37,36 +37,34 @@ const Projects = () => {
       ],
     },
     {
-      name: "Job Alert Automation Bot",
-      about:
-        "Automated job aggregation platform that polls direct ATS provider APIs and job aggregators, filters postings against configurable keyword, location, and seniority rules, and sends real-time alerts to a Telegram bot.",
-      link: "https://github.com/devxml/Job-Alert-Automation-Bot",
-      image: automationbot,
-      tech: [
-        { name: "Node.js" },
-        { name: "PostgreSQL" },
-        { name: "Redis" },
-        { name: "Axios" },
-        { name: "node-cron" },
-        { name: "Telegram Bot API" },
-      ],
-    },
-    {
-      name: "ModelForge",
-      about:
-        "AI-powered platform that generates consistent character/model images across different scenes, outfits, moods, and environments, using multi-view reference uploads and a character consistency pipeline.",
-      link: "https://github.com/devxml/modelforge",
-      image: modelforge,
-      tech: [
-        { name: "Next.js" },
-        { name: "TypeScript" },
-        { name: "Express.js" },
-        { name: "MongoDB" },
-        { name: "Google Gemini" },
-        { name: "Cloudflare AI" },
-        { name: "Cloudinary" },
-      ],
-    },
+  name: "Job Discovery Automation Assistant",
+  about:
+    "Full-stack job discovery platform that aggregates listings from ATS platforms and job aggregators, filters and scores relevant opportunities, and delivers real-time job alerts through Socket.io.",
+  link: "https://github.com/devxml/Job-Alert-Automation-Bot",
+  image: automationbot,
+  tech: [
+    { name: "React.js" },
+    { name: "Express.js" },
+    { name: "PostgreSQL" },
+    { name: "Socket.io" },
+    { name: "node-cron" },
+  ],
+},
+   {
+  name: "ModelForge",
+  about:
+    "AI-powered character consistency platform that generates consistent scenes from four reference views using a two-stage Gemini and Cloudflare AI generation pipeline.",
+  link: "https://github.com/devxml/modelforge",
+  image: modelforge,
+  tech: [
+    { name: "Next.js" },
+    { name: "Node.js" },
+    { name: "MongoDB" },
+    { name: "Google Gemini" },
+    { name: "Cloudflare AI" },
+    { name: "AWS S3" },
+  ],
+},
     {
   name: "WellnessAI",
   about:

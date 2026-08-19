@@ -9,6 +9,7 @@ import Education from "./components/Education";
 import Projects from "./components/Projects"; 
 import Footer from "./components/Footer";  
 import Experience from "./components/Experience";
+import Activities from "./components/Activities";
 import Contextfirst from "./Theme";
 
 const Page = () => { 
@@ -25,14 +26,17 @@ const Page = () => {
 
   return (
     <Contextfirst.Provider value={{ mode, Setmode,image,setImage}}>
-      <div className="px-4 sm:px-12 xl:px-[200px] bg-white dark:bg-black dark:text-white">
+      <div className="portfolio-shell min-h-screen bg-white dark:bg-black dark:text-white">
+        <main className="mx-auto max-w-6xl px-4 sm:px-10 xl:px-16">
         <Navbar />
         <Header />
         <Experience />
         <Skills />
         <Projects />
         <Education />
+        <Activities />
         <Contactform />
+        </main>
       </div>
       <div className={`${mode === "dark" ? "bg-black" : "bg-white"} h-[100px]`}></div>
       <Footer />

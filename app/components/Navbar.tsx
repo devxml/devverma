@@ -18,6 +18,7 @@ const Header: header[] = [
   { title: "Skills", href: "#skills" },
   { title: "Projects", href: "#projects" },
   { title: "Education", href: "#education" },
+  { title: "Activities", href: "#activities" },
 ];
 
 const Navbar = () => {

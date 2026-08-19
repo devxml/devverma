@@ -11,17 +11,20 @@ const Header = () => {
   const [hovered, setHovered] =useState<boolean>(false);
 
   return ( 
-    <div>
+    <section className="hero-section">
       <div
         id="home"
-        className={`z-20 flex justify-center gap-3 py-6 items-center lg:gap-6 mt-[15vh] dark:mt-0`}
+        className={`z-20 flex flex-col-reverse justify-center gap-6 py-12 items-center text-center lg:flex-row lg:justify-between lg:gap-10 lg:py-20 lg:text-left mt-[15vh] dark:mt-0`}
       >
-        <div className="max-w-[525px]">
-          <p className="text-2xl sm:text-3xl mb-[2px] font-light text-nowrap">
+        <div className="max-w-[600px]">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-gray-500 dark:text-gray-400">
+            Full-stack developer
+          </p>
+          <p className="text-3xl sm:text-5xl mb-2 font-light">
             Hi, I&apos;m Dev Verma
           </p>
-          <p id="about" className=" font-outfit font-extralight text-lg">
-            22 | Full-stack Developer
+          <p id="about" className="font-extralight text-lg sm:text-xl">
+            22 | Building dynamic web apps with AI-powered features.
           </p>
         </div>
         <Image
@@ -30,18 +33,22 @@ const Header = () => {
           onClick={() => setImage((prev: boolean) => !prev)}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
-          className="rounded-full w-[120px] sm:max-h-[140px] sm:min-w-[140px] sm:w-[140px] border-2 object-cover cursor-pointer"
+          className="rounded-full w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] border-2 border-gray-200 object-cover cursor-pointer shadow-xl dark:border-gray-700"
         />
       </div>
 
-      <div>
-        <h1 className="font-normal text-xl">About</h1>
-        <p className="font-extralight text-lg">
-          B.Tech CSE student and{" "}
-          <span className=" font-medium">Full-stack Developer</span>, building
-          dynamic web apps with AI-powered features.
-        </p>
-      </div>
+   <div className="border-y border-gray-200 py-6 dark:border-gray-800">
+  <div className="max-w-5xl mx-auto">
+    <h1 className="font-normal text-xl mb-2">About</h1>
+    <p className="font-extralight text-lg leading-relaxed">
+      I&apos;m a software developer focused on{" "}
+      <span className="font-medium">full-stack development</span>,{" "}
+      <span className="font-medium">backend engineering</span>, and{" "}
+      <span className="font-medium">AI-powered applications</span>.I enjoy
+      solving real-world problems, building scalable applications.
+    </p>
+  </div>
+</div>
 
       <div className="flex justify-center p-7 gap-6">
         <a href="#contact">
@@ -63,7 +70,7 @@ const Header = () => {
   </span>
 </a>
       </div>
-    </div>
+    </section>
   );
 };
 
