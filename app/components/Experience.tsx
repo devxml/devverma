@@ -23,10 +23,10 @@ const Experience = () => {
       description: "Software Development Intern",
       
       additional: [
-        "Designed a role-based shipment tracking dashboard using React, Node.js, Express.js and MongoDB, replacing manual spreadsheet tracking for 500+ records.",
-        "Developed secure REST APIs for shipment management with JWT authentication, pagination, and validation.",
-        "Optimized MongoDB schema and indexing, reducing shipment lookup time from 5 min to 20 sec — 93% improvement",
-        "Reduced manual data-entry errors through server-side validation and structured logging by ∼70%, improving data accuracy"
+        "Built a MERN-stack courier management platform from scratch, delivering 7+ production modules across logistics operations and admin workflows.",
+        "Designed and implemented a JWT-based authentication and role-based access system for Admin, Operator, and Delivery Staff.",
+        "Engineered the Shipment and Customer modules with advanced search, filtering, pagination, and CSV export, improving operational efficiency by 70%+.",
+        "Engineered RESTful APIs using Node.js, Express.js, MongoDB aggregation pipelines, and Zod schema validation, reducing runtime validation errors by 50%+."
       ]
     },
     {

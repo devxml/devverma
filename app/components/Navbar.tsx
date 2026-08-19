@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <nav>
       {mode == "dark" ? (
-        <div className="h-[15vh] bg-black"></div>
+        <div className="h-[15vh] bg-[#111210]"></div>
       ) : (
         <Image
           src={image1}
@@ -49,11 +49,8 @@ const Navbar = () => {
       )}
       <div
         className={`fixed w-full z-50 top-0 ${
-          scroll &&
-          `${
-            mode === "light" ? "bg-white" : "bg-black"
-          } bg-opacity-40 backdrop-blur-lg`
-        } left-0 h-[15vh] flex justify-between md:justify-around items-center py-8 z-60`}
+          scroll && "bg-opacity-40"
+          } left-0 h-[15vh] flex justify-between md:justify-around items-center border-b border-black/10 bg-[#f4f1ea]/90 py-8 backdrop-blur-lg dark:border-white/10 dark:bg-[#111210]/90 z-60`}
       >
         <div className="relative text-3xl text-center w-[25%] font-medium">
           Dev
@@ -62,8 +59,8 @@ const Navbar = () => {
 
         <ul
           className={`hidden ${
-            mode === "dark" ? "text-white bg-black" : "text-black bg-white"
-          } sm:flex justify-between items-center shadow-md rounded-3xl dark:shadow-sm dark:shadow-gray-300`}
+            mode === "dark" ? "text-white bg-[#20221d]" : "text-black bg-white/80"
+          } sm:flex justify-between items-center shadow-md rounded-3xl dark:shadow-sm dark:shadow-gray-700`}
         >
           {Header.map((e, i) => (
             <a
@@ -97,7 +94,7 @@ const Navbar = () => {
           <a href="#contact">
             <div
               className={`${
-                mode === "dark" ? "bg-black" : "bg-white"
+                mode === "dark" ? "bg-[#20221d] text-white" : "bg-white/80 text-black"
               } hidden sm:flex items-center justify-center shadow-md rounded-3xl px-4 cursor-pointer text-lg py-2 `}
             >
               Contact
@@ -109,7 +106,7 @@ const Navbar = () => {
 
       <ul
         className={`fixed ${side ? "right-0" : "-right-[100%]"} ${
-          mode === "dark" ? "text-white bg-black" : "text-black bg-white"
+          mode === "dark" ? "text-white bg-[#111210]" : "text-black bg-[#f4f1ea]"
         } top-0 w-[75vw] h-[100vh] sm:hidden z-50 py-[80px] flex flex-col gap-6 pr-9 shadow-lg transition-all duration-300`}
       >
         <RxCross2
