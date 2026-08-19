@@ -102,38 +102,37 @@ const Projects = () => {
   ];
 
   return (
-    <div id="projects" className="mt-10">
-      <h1 className="text-[20px] flex items-center gap-5 text-center mb-4">
-        Projects{" "}
-        <span>
-          <a target="_blank" href="https://github.com/devxml">
-            <FaGithubSquare size={30} />
-          </a>
-        </span>
-      </h1>
-      <div className="flex justify-center gap-5 mb-0 flex-wrap w-full">
+    <section id="projects" className="mt-20">
+      <div className="mb-6 flex items-end justify-between gap-4">
+        <div>
+          <p className="section-label mb-2">Selected work</p>
+          <h2 className="text-3xl font-light tracking-[-0.03em] sm:text-4xl">Projects</h2>
+        </div>
+        <a target="_blank" href="https://github.com/devxml" className="inline-flex items-center gap-2 text-sm text-gray-500 transition-colors hover:text-black dark:text-gray-400 dark:hover:text-white">
+          View GitHub <FaGithubSquare size={22} />
+        </a>
+      </div>
+      <div className="grid w-full gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((e, i) => (
           <a
             target="_blank"
             key={i}
             href={e.link}
-            className={`${
-              mode === "light" ? "" : " shadow-slate-700"
-            } shadow-lg rounded-lg w-full sm:w-[48%] pb-2 max-w-[421px]`}
+            className={`lift-on-hover flex h-full w-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white/70 pb-0 shadow-sm dark:border-gray-700 dark:bg-white/[0.03]`}
           >
             <Image
               src={e.image}
-              className="w-full object-cover lg:object-top rounded-lg"
-              alt="projects"
+              className="aspect-[16/10] w-full object-cover object-top"
+              alt={`${e.name} project preview`}
             />
-            <div className="flex flex-col gap-3 w-full p-3">
-              <h1 className="relative">{e.name}</h1>
-              <p className="font-light">{e.about}</p>
-              <div className="flex gap-2 flex-wrap">
+            <div className="flex flex-1 flex-col gap-3 p-5">
+              <h3 className="text-xl font-medium tracking-[-0.02em]">{e.name}</h3>
+              <p className="flex-1 text-sm font-light leading-6 text-gray-600 dark:text-gray-300">{e.about}</p>
+              <div className="flex flex-wrap gap-2 pt-2">
                 {e.tech.map((e, i) => (
                   <div
                     key={i}
-                    className={` text-sm font-extralight rounded-lg px-2  ${
+                    className={`text-xs font-medium rounded-full px-2.5 py-1 ${
                       mode != "dark" ? "bg-gray-200" : "bg-gray-700"
                     }`}
                   >
@@ -145,7 +144,7 @@ const Projects = () => {
           </a>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

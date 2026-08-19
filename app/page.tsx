@@ -26,8 +26,8 @@ const Page = () => {
 
   return (
     <Contextfirst.Provider value={{ mode, Setmode,image,setImage}}>
-      <div className="portfolio-shell min-h-screen bg-white dark:bg-black dark:text-white">
-        <main className="mx-auto max-w-6xl px-4 sm:px-10 xl:px-16">
+      <div className="portfolio-shell min-h-screen dark:text-white">
+        <main className="mx-auto max-w-7xl px-4 sm:px-8 xl:px-14">
         <Navbar />
         <Header />
         <Experience />
@@ -38,7 +38,7 @@ const Page = () => {
         <Contactform />
         </main>
       </div>
-      <div className={`${mode === "dark" ? "bg-black" : "bg-white"} h-[100px]`}></div>
+      <div className={`${mode === "dark" ? "bg-[#111210]" : "bg-[#f4f1ea]"} h-[72px]`}></div>
       <Footer />
     </Contextfirst.Provider>
   );

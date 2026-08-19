@@ -2,29 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+:root {
+  --paper: #f4f1ea;
+  --ink: #171817;
+  --muted: #6d706b;
+  --accent: #d9ff52;
+  --accent-deep: #a6c92a;
+}
 
-  font-family: Outfit; 
+* {
   scroll-behavior: smooth;
-} 
+}
 
 body {
-  background: #f8f8f6;
+  background: var(--paper);
+  color: var(--ink);
 }
 
 .portfolio-shell {
   background-image: linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-size: 42px 42px;
 }
 
 .dark body {
-  background: #000;
+  background: #111210;
 }
 
 .dark .portfolio-shell {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
 }
 
 #home,#skills,#projects,#education,#contact,#experience,#activities{ 
@@ -34,6 +41,47 @@ body {
 
 input:focus, textarea:focus {
   outline: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+.section-label {
+  color: var(--accent-deep);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.dark .section-label {
+  color: var(--accent);
+}
+
+.lift-on-hover {
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.lift-on-hover:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-deep);
+  box-shadow: 0 18px 40px rgba(23, 24, 23, 0.12);
+}
+
+.dark .lift-on-hover:hover {
+  border-color: var(--accent);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rise-in {
+  animation: rise-in 700ms ease both;
 }
 
 .underline-hover {
