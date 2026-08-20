@@ -9,7 +9,8 @@ import Education from "./components/Education";
 import Projects from "./components/Projects"; 
 import Footer from "./components/Footer";  
 import Experience from "./components/Experience";
-import Activities from "./components/Activities";
+import Achievements from "./components/Activities";
+import About from "./components/About";
 import Contextfirst from "./Theme";
 
 const Page = () => { 
@@ -31,10 +32,11 @@ const Page = () => {
         <Navbar />
         <Header />
         <Experience />
-        <Skills />
         <Projects />
+        <Skills />
+        <Achievements />
         <Education />
-        <Activities />
+        <About />
         <Contactform />
         </main>
       </div>

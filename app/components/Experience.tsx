@@ -36,7 +36,7 @@ const Experience = () => {
       institution: "Technical Club, Sanskriti University",
       description: "AI/ML Lead | Volunteer",
       additional: [
-        "Led AI/ML initiatives, mentoring 20+ students in Python, ML algorithms, and data visualization.",
+        "Led AI/ML initiatives, mentoring 60+ students in Python, ML algorithms, and data visualization.",
         "Conducted workshops on LLMs, RAG Systems, Vector Databases, and Modern AI Applications, enhancing technical knowledge and practical skills.",
       ],
     },

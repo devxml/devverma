@@ -1,148 +1,620 @@
-import React, { useContext } from "react";
-import { FaGithubSquare } from "react-icons/fa";
-import codepilot from "../../assets/codepilot.png";
-import automationbot from "../../assets/automationbot.png";
-import modelforge from "../../assets/modelforge.png";
-import wellnessai from "../../assets/wellnessai.png";
-import mockmate from "../../assets/mockmate.png";
+"use client";
+
+import React, { useEffect, useRef, useState } from "react";
 import Image, { StaticImageData } from "next/image";
-import Contextfirst from "../Theme";
+import { FaGithubSquare } from "react-icons/fa";
+import { MdArrowOutward } from "react-icons/md";
+
+import modelforge from "../../assets/modelforge.png";
+
+interface Achievement {
+  value: string;
+  label: string;
+}
+
+interface Project {
+  name: string;
+  subtitle: string;
+  about: string;
+  link: string;
+  video?: string;
+  image?: StaticImageData;
+  achievements: Achievement[];
+  tech: string[];
+}
+
+const projects: Project[] = [
+  {
+    name: "CodePilot",
+    subtitle: "Talk to your codebase.",
+    about:
+      "AI-powered developer productivity platform that turns a GitHub repository or ZIP archive into a searchable, conversational workspace. It retrieves relevant code context and generates architecture, implementation, and security analysis.",
+    video: "/videos/codepilot.mp4",
+    link: "https://github.com/devxml/codepilot",
+
+    achievements: [
+      {
+        value: "500K+",
+        label: "Lines of code supported",
+      },
+      {
+        value: "5",
+        label: "AI agents orchestrated",
+      },
+      {
+        value: "<50ms",
+        label: "Retrieval p95 latency",
+      },
+    ],
+
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Express",
+      "FastAPI",
+      "LangGraph",
+      "Pinecone",
+      "PostgreSQL",
+      "Docker",
+    ],
+  },
+
+  {
+    name: "Job Discovery Automation Assistant",
+    subtitle: "Automated job discovery.",
+    about:
+      "Full-stack job discovery platform that aggregates listings from ATS platforms and job aggregators, filters and scores relevant opportunities, and delivers real-time job alerts through Socket.io.",
+
+    video: "/videos/jobdiscovery.mp4",
+    link: "https://github.com/devxml/Job-Alert-Automation-Bot",
+
+    achievements: [
+      {
+        value: "7+",
+        label: "ATS platforms integrated",
+      },
+      {
+        value: "30K+",
+        label: "Postings per scan",
+      },
+      {
+        value: "95%+",
+        label: "Irrelevant matches filtered",
+      },
+    ],
+
+    tech: [
+      "React.js",
+      "Express.js",
+      "PostgreSQL",
+      "Socket.io",
+      "Node.js",
+      "node-cron",
+    ],
+  },
+
+  {
+    name: "ModelForge",
+    subtitle: "Consistent characters, generated anywhere.",
+    about:
+      "AI-powered character consistency platform that generates consistent scenes from four reference views using a two-stage Gemini and Cloudflare AI generation pipeline.",
+
+    image: modelforge,
+    link: "https://github.com/devxml/modelforge",
+
+    achievements: [
+      {
+        value: "4",
+        label: "Reference views",
+      },
+      {
+        value: "2-stage",
+        label: "AI generation pipeline",
+      },
+      {
+        value: "AWS S3",
+        label: "Image storage",
+      },
+    ],
+
+    tech: [
+      "Next.js",
+      "Node.js",
+      "MongoDB",
+      "Google Gemini",
+      "Cloudflare AI",
+      "AWS S3",
+    ],
+  },
+];
 
 const Projects = () => {
-  const { mode } = useContext(Contextfirst)!;
-  interface Projects {
-    name: string;
-    about: string;
-    link: string;
-    image: StaticImageData;
-    tech: { name: string }[];
-  }
+  const [activeProject, setActiveProject] = useState<number | null>(null);
 
-  const projects: Projects[] = [
-    {
-      name: "CodePilot",
-      about:
-        "AI-powered developer productivity platform that turns a GitHub repository or ZIP archive into a searchable, conversational workspace, retrieving relevant code context and generating architecture, implementation, and security analysis.",
-      link: "https://github.com/devxml/codepilot",
-      image: codepilot,
-      tech: [
-        { name: "Next.js" },
-        { name: "TypeScript" },
-        { name: "Express" },
-        { name: "FastAPI" },
-        { name: "LangGraph" },
-        { name: "Pinecone" },
-        { name: "PostgreSQL" },
-        { name: "Docker" },
-      ],
-    },
-    {
-  name: "Job Discovery Automation Assistant",
-  about:
-    "Full-stack job discovery platform that aggregates listings from ATS platforms and job aggregators, filters and scores relevant opportunities, and delivers real-time job alerts through Socket.io.",
-  link: "https://github.com/devxml/Job-Alert-Automation-Bot",
-  image: automationbot,
-  tech: [
-    { name: "React.js" },
-    { name: "Express.js" },
-    { name: "PostgreSQL" },
-    { name: "Socket.io" },
-    { name: "node-cron" },
-  ],
-},
-   {
-  name: "ModelForge",
-  about:
-    "AI-powered character consistency platform that generates consistent scenes from four reference views using a two-stage Gemini and Cloudflare AI generation pipeline.",
-  link: "https://github.com/devxml/modelforge",
-  image: modelforge,
-  tech: [
-    { name: "Next.js" },
-    { name: "Node.js" },
-    { name: "MongoDB" },
-    { name: "Google Gemini" },
-    { name: "Cloudflare AI" },
-    { name: "AWS S3" },
-  ],
-},
-    {
-  name: "WellnessAI",
-  about:
-    "AI-powered wellness platform that generates personalised Indian diet, skincare, and haircare plans using LangGraph agents, RAG, and India-specific knowledge bases.",
-  link: "https://github.com/devxml/wellnessai",
-  image: wellnessai,
-  tech: [
-    { name: "Next.js" },
-    { name: "TypeScript" },
-    { name: "Tailwind CSS" },
-    { name: "FastAPI" },
-    { name: "LangGraph" },
-    { name: "LangChain" },
-    { name: "Gemini" },
-    { name: "ChromaDB" },
-    { name: "MongoDB" },
-  ],
-},
-    {
-      name: "MockMate",
-      about:
-        "AI-powered interview preparation platform that analyzes your resume and a job description to generate a match score, skill gap analysis, technical and behavioral practice questions, and a personalized learning roadmap.",
-      link: "https://github.com/devxml/mockmate",
-      image: mockmate,
-      tech: [
-        { name: "React" },
-        { name: "Vite" },
-        { name: "Tailwind CSS" },
-        { name: "Node.js" },
-        { name: "Express" },
-        { name: "MongoDB" },
-        { name: "Google Gemini" },
-      ],
-    },
-  ];
+  const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  /*
+   * Detect the project currently occupying the viewport.
+   */
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    projectRefs.current.forEach((project, index) => {
+      if (!project) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            setActiveProject(index);
+          }
+        },
+        {
+          threshold: [0.5],
+        }
+      );
+
+      observer.observe(project);
+      observers.push(observer);
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
+
+  /*
+   * Only play a video when its project becomes active.
+   * ModelForge has no video, so nothing happens for it.
+   */
+  useEffect(() => {
+    videoRefs.current.forEach((video, index) => {
+      if (!video) return;
+
+      if (index === activeProject) {
+        video.currentTime = 0;
+
+        const playPromise = video.play();
+
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {});
+        }
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  }, [activeProject]);
 
   return (
-    <section id="projects" className="mt-20">
-      <div className="mb-6 flex items-end justify-between gap-4">
+    <section id="projects" className="relative mt-24">
+      {/* =====================================================
+          PROJECTS HEADER
+      ====================================================== */}
+
+      <div className="mb-12 flex items-end justify-between gap-6">
         <div>
-          <h2 className="text-3xl font-light tracking-[-0.03em] sm:text-4xl">Projects</h2>
+          <p className="section-label mb-3">Projects</p>
+
+          <h2 className="text-3xl font-light tracking-[-0.04em] sm:text-5xl">
+            Things I&apos;ve built.
+          </h2>
         </div>
-        <a target="_blank" href="https://github.com/devxml" className="inline-flex items-center gap-2 text-sm text-gray-500 transition-colors hover:text-black dark:text-gray-400 dark:hover:text-white">
-          View GitHub <FaGithubSquare size={22} />
+
+        <a
+          href="https://github.com/devxml"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            hidden
+            items-center
+            gap-2
+            text-sm
+            text-gray-500
+            transition-colors
+            hover:text-black
+            dark:text-gray-400
+            dark:hover:text-white
+            sm:inline-flex
+          "
+        >
+          View GitHub
+          <FaGithubSquare size={21} />
         </a>
       </div>
-      <div className="grid w-full gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((e, i) => (
-          <a
-            target="_blank"
-            key={i}
-            href={e.link}
-            className={`lift-on-hover flex h-full w-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white/70 pb-0 shadow-sm dark:border-gray-700 dark:bg-white/[0.03]`}
-          >
-            <Image
-              src={e.image}
-              className="aspect-[16/10] w-full object-cover object-top"
-              alt={`${e.name} project preview`}
-            />
-            <div className="flex flex-1 flex-col gap-3 p-5">
-              <h3 className="text-xl font-medium tracking-[-0.02em]">{e.name}</h3>
-              <p className="flex-1 text-sm font-light leading-6 text-gray-600 dark:text-gray-300">{e.about}</p>
-              <div className="flex flex-wrap gap-2 pt-2">
-                {e.tech.map((e, i) => (
+
+      {/* =====================================================
+          PROJECT STACK
+      ====================================================== */}
+
+      <div className="relative">
+        {projects.map((project, index) => {
+          const isActive = activeProject === index;
+          const isLastProject = index === projects.length - 1;
+
+          return (
+            <div
+              key={project.name}
+              ref={(element) => {
+                projectRefs.current[index] = element;
+              }}
+              className="relative"
+              style={{
+                /*
+                 * Creates the vertical scroll distance required
+                 * for the next project to overlap the current one.
+                 */
+                height: isLastProject ? "110vh" : "125vh",
+
+                /*
+                 * Every next project appears above the previous one.
+                 */
+                zIndex: index + 1,
+              }}
+            >
+              {/* =================================================
+                  STICKY PROJECT CARD
+              ================================================== */}
+
+              <div className="sticky top-0 flex min-h-screen items-center py-8 sm:py-10">
+                <article
+                  className={`
+                    relative
+                    grid
+                    w-full
+                    overflow-hidden
+                    rounded-[28px]
+                    border
+                    border-black/10
+                    bg-white
+                    dark:border-white/10
+                    dark:bg-[#0c0c0c]
+
+                    transition-all
+                    duration-[900ms]
+                    ease-[cubic-bezier(0.22,1,0.36,1)]
+
+                    lg:grid-cols-[1.65fr_1fr]
+
+                    ${
+                      isActive
+                        ? "translate-y-0 scale-100 opacity-100 shadow-[0_30px_100px_rgba(0,0,0,0.13)] dark:shadow-[0_30px_100px_rgba(0,0,0,0.45)]"
+                        : "translate-y-8 scale-[0.965] opacity-80 shadow-[0_15px_50px_rgba(0,0,0,0.08)]"
+                    }
+                  `}
+                >
+                  {/* =================================================
+                      PROJECT VISUAL
+                  ================================================== */}
+
                   <div
-                    key={i}
-                    className={`text-xs font-medium rounded-full px-2.5 py-1 ${
-                      mode != "dark" ? "bg-gray-200" : "bg-gray-700"
-                    }`}
+                    className="
+                      relative
+                      flex
+                      min-h-[380px]
+                      items-center
+                      justify-center
+                      overflow-hidden
+                      bg-[#080808]
+
+                      sm:min-h-[500px]
+
+                      lg:min-h-[calc(100vh-5rem)]
+                    "
                   >
-                    {e.name}
+                    {project.video ? (
+                      <>
+                        <video
+                          ref={(element) => {
+                            videoRefs.current[index] = element;
+                          }}
+                          src={project.video}
+                          muted
+                          playsInline
+                          loop
+                          preload="metadata"
+                          className={`
+                            h-full
+                            w-full
+                            object-contain
+
+                            transition-transform
+                            duration-[1200ms]
+                            ease-out
+
+                            ${
+                              isActive
+                                ? "scale-100"
+                                : "scale-[1.025]"
+                            }
+                          `}
+                        />
+
+                        {/* Video overlay */}
+
+                        <div
+                          className="
+                            pointer-events-none
+                            absolute
+                            inset-0
+                            bg-gradient-to-r
+                            from-black/10
+                            via-transparent
+                            to-black/20
+                          "
+                        />
+
+                        <div
+                          className="
+                            pointer-events-none
+                            absolute
+                            inset-x-0
+                            bottom-0
+                            h-28
+                            bg-gradient-to-t
+                            from-black/30
+                            to-transparent
+                          "
+                        />
+                      </>
+                    ) : project.image ? (
+                      <div className="relative h-full min-h-[380px] w-full sm:min-h-[500px] lg:min-h-[calc(100vh-5rem)]">
+                        <Image
+                          src={project.image}
+                          alt={`${project.name} project preview`}
+                          fill
+                          priority
+                          className={`
+                            object-cover
+                            object-top
+
+                            transition-transform
+                            duration-[1200ms]
+                            ease-out
+
+                            ${
+                              isActive
+                                ? "scale-100"
+                                : "scale-[1.025]"
+                            }
+                          `}
+                        />
+
+                        <div
+                          className="
+                            pointer-events-none
+                            absolute
+                            inset-0
+                            bg-gradient-to-r
+                            from-black/5
+                            via-transparent
+                            to-black/20
+                          "
+                        />
+                      </div>
+                    ) : null}
                   </div>
-                ))}
+
+                  {/* =================================================
+                      PROJECT INFORMATION
+                  ================================================== */}
+
+                  <div
+                    className="
+                      flex
+                      min-h-[440px]
+                      flex-col
+                      justify-between
+                      p-7
+
+                      sm:p-10
+
+                      lg:min-h-[calc(100vh-5rem)]
+                      lg:p-12
+                    "
+                  >
+                    <div>
+                      {/* PROJECT NAME */}
+
+                      <h3
+                        className="
+                          max-w-lg
+                          text-4xl
+                          font-light
+                          leading-[0.95]
+                          tracking-[-0.045em]
+
+                          sm:text-5xl
+
+                          lg:text-6xl
+                        "
+                      >
+                        {project.name}
+                      </h3>
+
+                      {/* SUBTITLE */}
+
+                      <p
+                        className="
+                          mt-6
+                          text-xl
+                          font-light
+                          text-gray-500
+                          dark:text-gray-400
+                        "
+                      >
+                        {project.subtitle}
+                      </p>
+
+                      {/* DIVIDER */}
+
+                      <div
+                        className="
+                          my-8
+                          h-px
+                          w-full
+                          bg-black/10
+                          dark:bg-white/10
+                        "
+                      />
+
+                      {/* DESCRIPTION */}
+
+                      <p
+                        className="
+                          max-w-xl
+                          text-base
+                          font-light
+                          leading-7
+                          text-gray-600
+                          dark:text-gray-300
+                        "
+                      >
+                        {project.about}
+                      </p>
+
+                      {/* =================================================
+                          ACHIEVEMENTS
+                      ================================================== */}
+
+                      <div className="mt-9">
+                        <p
+                          className="
+                            mb-4
+                            text-xs
+                            font-medium
+                            uppercase
+                            tracking-[0.18em]
+                            text-gray-400
+                          "
+                        >
+                          Highlights
+                        </p>
+
+                        <div className="grid grid-cols-3 gap-3">
+                          {project.achievements.map((achievement) => (
+                            <div
+                              key={achievement.label}
+                              className="
+                                border
+                                border-black/10
+                                px-3
+                                py-4
+                                dark:border-white/10
+                              "
+                            >
+                              <p
+                                className="
+                                  text-xl
+                                  font-medium
+                                  tracking-[-0.03em]
+
+                                  sm:text-2xl
+                                "
+                              >
+                                {achievement.value}
+                              </p>
+
+                              <p
+                                className="
+                                  mt-1
+                                  text-[11px]
+                                  font-light
+                                  leading-4
+                                  text-gray-500
+                                  dark:text-gray-400
+                                "
+                              >
+                                {achievement.label}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* =================================================
+                          TECHNOLOGIES
+                      ================================================== */}
+
+                      <div
+                        className="
+                          mt-8
+                          flex
+                          max-w-xl
+                          flex-wrap
+                          gap-2
+                        "
+                      >
+                        {project.tech.map((technology) => (
+                          <span
+                            key={technology}
+                            className="
+                              rounded-full
+                              border
+                              border-black/10
+                              px-3
+                              py-1.5
+                              text-xs
+                              font-light
+                              text-gray-600
+                              dark:border-white/10
+                              dark:text-gray-300
+                            "
+                          >
+                            {technology}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* =================================================
+                        GITHUB / PROJECT LINK
+                    ================================================== */}
+
+                    <div className="mt-10">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="
+                          group
+                          inline-flex
+                          items-center
+                          gap-2
+                          border-b
+                          border-black
+                          pb-1
+                          text-sm
+                          font-medium
+                          dark:border-white
+                        "
+                      >
+                        View project
+
+                        <MdArrowOutward
+                          size={18}
+                          className="
+                            transition-transform
+                            duration-300
+                            group-hover:-translate-y-1
+                            group-hover:translate-x-1
+                          "
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </article>
               </div>
             </div>
-          </a>
-        ))}
+          );
+        })}
       </div>
+
+      {/* =====================================================
+          SPACE BEFORE SKILLS
+      ====================================================== */}
+
+      <div className="h-24 sm:h-32" />
     </section>
   );
 };

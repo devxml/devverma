@@ -18,7 +18,7 @@ const Header: header[] = [
   { title: "Skills", href: "#skills" },
   { title: "Projects", href: "#projects" },
   { title: "Education", href: "#education" },
-  { title: "Activities", href: "#activities" },
+  { title: "Achievements", href: "#achievements" },
 ];
 
 const Navbar = () => {
@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <nav>
       {mode == "dark" ? (
-        <div className="h-[15vh] bg-[#111210]"></div>
+        <div className="h-[10vh] bg-[#111210]"></div>
       ) : (
         <Image
           src={image1}
@@ -50,12 +50,12 @@ const Navbar = () => {
       <div
         className={`fixed w-full z-50 top-0 ${
           scroll && "bg-opacity-40"
-          } left-0 h-[15vh] flex justify-between md:justify-around items-center border-b border-black/10 bg-[#f4f1ea]/90 py-8 backdrop-blur-lg dark:border-white/10 dark:bg-[#111210]/90 z-60`}
+          } left-0 h-[10vh] flex justify-between md:justify-around items-center border-b border-black/10 bg-[#f4f1ea]/90 py-4 backdrop-blur-lg dark:border-white/10 dark:bg-[#111210]/90 z-60`}
       >
-        <div className="relative text-3xl text-center w-[25%] font-medium">
-          Dev
-          <span className="absolute bottom-0 text-5xl text-red-600">.</span>
-        </div>
+       <div className="relative w-[25%] text-center text-3xl font-medium">
+  Dev
+  <span className="absolute bottom-0 text-5xl text-[#d9ff52]">.</span>
+</div>
 
         <ul
           className={`hidden ${

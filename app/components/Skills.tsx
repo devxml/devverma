@@ -1,91 +1,88 @@
 import React from "react";
-import { FaAws } from "react-icons/fa6";
-import { SiLanggraph } from "react-icons/si";
-import { IconType } from "react-icons";
-import {
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaGitAlt,
-  FaGithub,
-  FaDocker,
-} from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io5";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import {
-  SiExpress,
-  SiMongodb,
-  SiPostgresql,
-  SiPrisma,
-  SiDrizzle,
-  SiPostman,
-  SiRedux,
-  SiTypescript,
-  SiShadcnui,
-  SiFastapi,
-} from "react-icons/si";
-import { TbBrandCpp } from "react-icons/tb";
 
 const Skills = () => {
-  interface Skill {
-    name: string;
-    icon: IconType;
-    color: string; // New color property
-  }
-
-  const skills: Skill[] = [
-    // 🔹 Frontend
-    { name: "Nextjs", icon: RiNextjsFill, color: "" },
-    { name: "React", icon: FaReact, color: "text-sky-400" },
-    { name: "Redux", icon: SiRedux, color: "text-purple-600" },
-    { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-teal-400" },
-    { name: "Shadcn UI", icon: SiShadcnui, color: "" },
-    { name: "TypeScript", icon: SiTypescript, color: "text-blue-600" },
-    { name: "JavaScript", icon: IoLogoJavascript, color: "text-yellow-500" },
-
-    // 🔹 Backend & Databases
-    { name: "NodeJS", icon: FaNodeJs, color: "text-green-700" },
-    { name: "Express.js", icon: SiExpress, color: "" },
-    { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
-    { name: "PostgreSQL", icon: SiPostgresql, color: "text-sky-700" },
-    { name: "Prisma", icon: SiPrisma, color: "text-teal-500" },
-    { name: "Drizzle", icon: SiDrizzle, color: "text-lime-500" },
-
-    // 🔹 Programming Languages
-    { name: "C++", icon: TbBrandCpp, color: "text-blue-700" },
-    { name: "Python", icon: FaPython, color: "text-blue-500" },
-
-    // 🔹 AI
-    { name: "LangGraph", icon: SiLanggraph, color: "text-indigo-500" },
-
-    // 🔹 Tools & DevOps
-    { name: "Git", icon: FaGitAlt, color: "text-red-600" },
-    { name: "GitHub", icon: FaGithub, color: "" },
-    { name: "AWS", icon: FaAws, color: "text-orange-500" },
-    { name: "Postman", icon: SiPostman, color: "text-orange-500" },
-    { name: "Docker", icon: FaDocker, color: "text-blue-500" },
-    { name: "FastAPI", icon: SiFastapi, color: "text-teal-600" },
+  const skillGroups = [
+    {
+      title: "Frontend",
+      skills: [
+        "React.js",
+        "Next.js",
+        "Tailwind CSS",
+        "TypeScript",
+        "JavaScript",
+        "HTML/CSS",
+      ],
+    },
+    {
+      title: "Backend",
+      skills: [
+        "Node.js",
+        "Express.js",
+        "FastAPI",
+        "REST APIs",
+        "PostgreSQL",
+        "MongoDB",
+        "Prisma",
+      ],
+    },
+    {
+      title: "AI / ML",
+      skills: [
+        "LLMs",
+        "LangGraph",
+        "RAG",
+        "AI Agents",
+        "Machine Learning",
+        "NLP",
+      ],
+    },
+    {
+      title: "Cloud & DevOps",
+      skills: [
+        "Git/GitHub",
+        "AWS",
+        "Docker",
+        "Vercel",
+        "Postman",
+      ],
+    },
   ];
 
   return (
-    <div className="m-4" id="skills">
-      <h1 className="text-2xl mb-3">Skills</h1>
-      <div className="flex flex-wrap gap-6">
-        {skills.map((skill, index) => (
+    <section id="skills" className="mt-12 mb-8">
+      {/* Heading */}
+      <div className="mb-7">
+        <h2 className="text-[22px]">Skills</h2>
+      </div>
+
+      {/* Skills */}
+      <div className="border-y border-black/10 dark:border-white/10">
+        {skillGroups.map((group) => (
           <div
-            key={index}
-            className={`flex flex-col items-center ${skill.color}`}
+            key={group.title}
+            className="grid gap-5 border-b border-black/10 py-7 last:border-b-0 dark:border-white/10 sm:grid-cols-[180px_1fr] sm:gap-10"
           >
-            <skill.icon size={35} />
-            <p className="font-outfit font-extralight">{skill.name}</p>
+            {/* Category */}
+            <h3 className="text-sm font-medium uppercase tracking-[0.12em] text-gray-500 dark:text-gray-400">
+              {group.title}
+            </h3>
+
+            {/* Skill Tags */}
+            <div className="flex flex-wrap gap-2.5">
+              {group.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="border border-black/15 px-3 py-1.5 text-sm font-light text-gray-700 transition-colors duration-200 hover:border-black hover:text-black dark:border-white/15 dark:text-gray-300 dark:hover:border-white dark:hover:text-white"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         ))}
       </div>
-      {/* style={skill.name==="Express.js"?{color: "white"}: { color: skill.color }} */}
-    </div>
+    </section>
   );
 };
- 
 
 export default Skills;
-             
