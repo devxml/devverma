@@ -15,10 +15,10 @@ interface header {
 const Header: header[] = [
   { title: "Home", href: "#home" },
   { title: "Experience", href: "#experience" },
-  { title: "Skills", href: "#skills" },
   { title: "Projects", href: "#projects" },
-  { title: "Education", href: "#education" },
+  { title: "Skills", href: "#skills" },
   { title: "Achievements", href: "#achievements" },
+  { title: "Education", href: "#education" },
 ];
 
 const Navbar = () => {
