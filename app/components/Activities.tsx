@@ -55,7 +55,7 @@ const Activities = () => {
     <section id="achievements" className="mt-12 mb-8">
       {/* Heading */}
       <div className="mb-6">
-        <h2 className="text-[22px]">Achievements</h2>
+        <h2 className="text-3xl sm:text-5xl">Achievements</h2>
       </div>
 
       {/* Cards */}

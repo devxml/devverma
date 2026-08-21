@@ -82,7 +82,7 @@ const Contactform = () => {
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
             Contact
           </p>
-          <h2 className="text-4xl font-light sm:text-5xl">Get in touch.</h2>
+          <h2 className="text-3xl font-light sm:text-5xl">Get in touch.</h2>
           <p className="mt-5 max-w-sm text-lg font-extralight leading-8 text-gray-600 dark:text-gray-300">
             Have a project, opportunity, or idea in mind? Send a message and
             I&apos;ll get back to you soon.

@@ -44,7 +44,7 @@ const Experience = () => {
 
   return (
     <div id="experience" className="mb-6">
-      <h1 className="text-[22px] py-3">Experience</h1>
+      <h1 className="py-3 text-3xl sm:text-5xl">Experience</h1>
       <div className="flex flex-col gap-6">
         {educationDetails.map((edu, index) => (
           <div

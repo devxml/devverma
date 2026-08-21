@@ -52,7 +52,7 @@ const Skills = () => {
     <section id="skills" className="mt-12 mb-8">
       {/* Heading */}
       <div className="mb-7">
-        <h2 className="text-[22px]">Skills</h2>
+        <h2 className="text-3xl sm:text-5xl">Skills</h2>
       </div>
 
       {/* Skills */}

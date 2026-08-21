@@ -60,7 +60,7 @@ const projects: Project[] = [
   },
 
   {
-    name: "Job Discovery Automation Assistant",
+    name: "Job Hunters",
     subtitle: "Automated job discovery.",
     about:
       "Full-stack job discovery platform that aggregates listings from ATS platforms and job aggregators, filters and scores relevant opportunities, and delivers real-time job alerts through Socket.io.",
@@ -194,11 +194,9 @@ const Projects = () => {
 
       <div className="mb-12 flex items-end justify-between gap-6">
         <div>
-          <p className="section-label mb-3">Projects</p>
 
           <h2 className="text-3xl font-light tracking-[-0.04em] sm:text-5xl">
-            Things I&apos;ve built.
-          </h2>
+          Projects          </h2>
         </div>
 
         <a

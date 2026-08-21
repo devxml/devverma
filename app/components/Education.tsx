@@ -25,7 +25,7 @@ const Education = () => {
 
   return (
     <div id="education" className="mt-5" >
-      <h1 className="text-[22px] py-3">Education</h1>
+      <h1 className="py-3 text-3xl sm:text-5xl">Education</h1>
       <div className="flex flex-col gap-6">
         {educationDetails.map((edu, index) => (
           <div key={index} className="flex items-center gap-3">
