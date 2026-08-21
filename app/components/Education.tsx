@@ -34,9 +34,11 @@ const Education = () => {
               className="h-[45px] w-[37px]"
               alt={edu.alt}
             />
-            <div className="relative w-full">
-              <p className="absolute top-0 right-0 font-extralight">{edu.duration}</p>
-              <p className="text-lg">{edu.institution}</p>
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                <p className="min-w-0 text-lg">{edu.institution}</p>
+                <p className="shrink-0 font-extralight">{edu.duration}</p>
+              </div>
               <span className="font-extralight">{edu.description} </span>
               <span className="font-extralight">{edu.additional}</span>
             </div>
